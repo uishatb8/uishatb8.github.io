@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="混合苯是指由苯、甲苯、二甲苯等多种芳烃组成的有机混合溶剂。本站提供混合苯的化学特性、工业用途、安全操作规范、职业健康防护措施及相关法律法规的详细解读。">
+    <meta name="keywords" content="混合苯, 苯混合物, 有机溶剂, 芳烃, 化学安全, 苯中毒防护, 苯系物">
+    <title>混合苯-有机溶剂特性解析与安全防护指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d32f2f;
+            --secondary-color: #1565c0;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-light: #666666;
+            --border-color: #e0e0e0;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--secondary-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fff5f5 0%, #e3f2fd 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 24px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: rgba(21, 101, 192, 0.1);
+            color: var(--secondary-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Main Layout */
+        .main-container {
+            max-width: var(--container-width);
+            margin: 40px auto;
+            padding: 0 var(--spacing-unit);
+            display: grid;
+            grid-template-columns: 2.5fr 1fr;
+            gap: 32px;
+        }
+
+        /* Section Styles */
+        section {
+            margin-bottom: 48px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title h2 {
+            font-size: 1.5rem;
+        }
+
+        /* Info Cards */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 24px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .card-icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+            display: block;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Table Styles */
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .data-table th, .data-table td {
+            padding: 16px;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .data-table th {
+            background-color: #f5f5f5;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .data-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .data-table tr:hover {
+            background-color: #fafafa;
+        }
+
+        .highlight-text {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--card-bg);
+            padding: 24px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 24px;
+        }
+
+        .sidebar-widget h3 {
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .checklist li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .checklist li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        /* Safety Alert */
+        .alert-box {
+            background-color: #ffebee;
+            border-left: 4px solid var(--primary-color);
+            padding: 16px;
+            margin-top: 16px;
+            border-radius: 4px;
+        }
+
+        .alert-box strong {
+            color: var(--primary-color);
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            padding: 48px 0;
+            margin-top: 60px;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+            text-align: center;
+        }
+
+        .footer-links {
+            margin: 20px 0;
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                height: auto;
+                padding: 16px;
+            }
+            
+            nav ul {
+                margin-top: 12px;
+                gap: 16px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .main-container {
+                grid-template-columns: 1fr;
+            }
+
+            .data-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v7.31"/><path d="M14 2v7.31"/><path d="M8.5 2h7"/><path d="M14 9.3a6.5 6.5 0 1 1-4 0"/><path d="M2 12h20"/></svg>
+                <span>混合苯安全指南</span>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#intro" class="active">基本概念</a></li>
+                    <li><a href="#properties">化学特性</a></li>
+                    <li><a href="#usage">工业用途</a></li>
+                    <li><a href="#safety">安全防护</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>混合苯：成分解析与安全防护指南</h1>
+            <p>混合苯并非单一的化学物质，而是一种以苯、甲苯、二甲苯为主要成分的有机溶剂混合物。了解其特性与危害，是做好职业健康防护的第一步。</p>
+            <div class="hero-tags">
+                <span class="tag">芳烃类溶剂</span>
+                <span class="tag">职业健康</span>
+                <span class="tag">安全防护</span>
+                <span class="tag">工业安全</span>
+            </div>
+        </div>
+    </section>
+
+    <div class="main-container">
+        <!-- Left Content -->
+        <main>
+            <section id="intro">
+                <div class="section-title">
+                    <h2>什么是混合苯？</h2>
+                </div>
+                <div class="info-grid">
+                    <article class="card">
+                        <span class="card-icon">🧪</span>
+                        <h3>定义</h3>
+                        <p>混合苯通常指由苯、甲苯、二甲苯（BTX）三种芳烃按一定比例混合而成的溶剂。根据国家标准，混合苯中苯的含量通常被限制在较低水平，但仍需严格管控。</p>
+                    </article>
+                    <article class="card">
+                        <span class="card-icon">🏭</span>
+                        <h3>常见来源</h3>
+                        <p>广泛用于涂料、油墨、胶粘剂、制鞋、木材加工等行业作为稀释剂或清洗剂。在喷漆作业、电子元件清洗等场景中最为常见。</p>
+                    </article>
+                    <article class="card">
+                        <span class="card-icon">⚖️</span>
+                        <h3>法规标准</h3>
+                        <p>我国《工作场所有害因素职业接触限值》对苯、甲苯、二甲苯均有严格规定。混合物中任何一种成分的超标均属于违规行为。</p>
+                    </article>
+                </div>
+            </section>
+
+            <section id="properties">
+                <div class="section-title">
+                    <h2>化学特性与危害</h2>
+                </div>
+                <p style="margin-bottom: 20px; color: var(--text-light);">混合苯具有易挥发、易燃、脂溶性的特点，接触人体后可通过呼吸道、皮肤吸收，对神经系统、血液系统造成损害。</p>
+                
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>成分</th>
+                            <th>特性</th>
+                            <th>主要健康风险</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>苯</strong></td>
+                            <td>高挥发性，无色透明液体，有特殊芳香</td>
+                            <td>造血系统毒性，致癌性（白血病风险）</td>
+                        </tr>
+                        <tr>
+                            <td><strong>甲苯</strong></td>
+                            <td>挥发性较强，微溶于水</td>
+                            <td>中枢神经抑制，急性中毒导致头晕、意识模糊</td>
+                        </tr>
+                        <tr>
+                            <td><strong>二甲苯</strong></td>
+                            <td>挥发性，不溶于水</td>
+                            <td>对粘膜有刺激，长期接触影响生殖系统</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="alert-box">
+                    <strong>⚠️ 高度警示：</strong>
+                    <p style="margin-top: 5px; font-size: 0.9rem;">苯被国际癌症研究机构（IARC）列为<strong>1类致癌物</strong>。在含有混合苯的工作环境中，必须采取工程控制和个人防护措施。</p>
+                </div>
+            </section>
+
+            <section id="usage">
+                <div class="section-title">
+                    <h2>工业应用场景</h2>
+                </div>
+                <div class="info-grid">
+                    <article class="card">
+                        <h3>涂装与喷漆</h3>
+                        <p>在汽车制造、家具生产中作为稀释剂使用，喷漆作业产生的挥发气体浓度极高，是中毒高发区。</p>
+                    </article>
+                    <article class="card">
+                        <h3>电子工业清洗</h3>
+                        <p>用于精密电子元件的脱脂清洗，要求溶剂挥发快且不留残渣。</p>
+                    </article>
+                    <article class="card">
+                        <h3>印刷与制鞋</h3>
+                        <p>油墨溶剂和胶水的主要成分，工人长时间密闭作业，接触风险大。</p>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <!-- Right Sidebar -->
+        <aside>
+            <div class="sidebar-widget">
+                <h3>安全防护清单</h3>
+                <ul class="checklist">
+                    <li>作业场所安装局部排风设施</li>
+                    <li>操作人员佩戴防毒面具（过滤式或隔离式）</li>
+                    <li>穿戴防化学手套和防护服</li>
+                    <li>严禁在密闭空间内长时间作业</li>
+                    <li>定期进行职业健康体检</li>
+                    <li>作业后彻底清洗双手和暴露皮肤</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>急救措施</h3>
+                <p style="font-size: 0.9rem; color: var(--text-light); margin-bottom: 10px;">若不慎接触或吸入，请立即采取以下措施：</p>
+                <ul class="checklist">
+                    <li>吸入：迅速脱离现场至空气新鲜处，保持呼吸道通畅。</li>
+                    <li>皮肤：脱去污染衣着，用肥皂水和清水彻底冲洗皮肤。</li>
+                    <li>眼睛：提起眼睑，用流动清水或生理盐水冲洗至少15分钟。</li>
+                    <li>就医：立即就医，并告知医生接触过混合苯。</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-widget">
+                <h3>常见问题 (FAQ)</h3>
+                <div style="margin-bottom: 12px;">
+                    <p style="font-weight: 600; font-size: 0.95rem;">Q: 混合苯和纯苯有什么区别？</p>
+                    <p style="font-size: 0.9rem; color: var(--text-light);">A: 混合苯是多种芳烃的混合物，苯含量通常较低，但甲苯和二甲苯含量较高，整体挥发性更强，同样具有毒性。</p>
+                </div>
+                <div>
+                    <p style="font-weight: 600; font-size: 0.95rem;">Q: 如何检测工作场所的浓度？</p>
+                    <p style="font-size: 0.9rem; color: var(--text-light);">A: 需使用专业的气体检测仪器（如气相色谱仪）定期进行定点采样和定期检测。</p>
+                </div>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2023 混合苯安全防护指南. 本站内容仅供参考，不作为医疗诊断依据。</p>
+            <div class="footer-links">
+                <a href="#">关于我们</a>
+                <a href="#">免责声明</a>
+                <a href="#">联系方式</a>
+                <a href="#">隐私政策</a>
+            </div>
+            <p style="font-size: 0.85rem; margin-top: 20px; color: #7f8c8d;">
+                本页面旨在提供关于混合苯的安全知识普及，请严格遵守相关安全法律法规。
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
