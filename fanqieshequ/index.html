@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>番茄社区app-热门话题聚集地与兴趣社交平台</title>
+    <meta name="description" content="番茄社区app官方门户，提供最新热门话题讨论、兴趣圈子交流、生活分享及短视频内容。探索多元社区文化，连接志同道合的朋友，记录精彩瞬间。">
+    <meta name="keywords" content="番茄社区app, 番茄社区, 社交软件, 热门话题, 兴趣圈子, 生活分享">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff6b35;
+            --secondary-color: #ff8c42;
+            --bg-color: #f8f9fa;
+            --text-main: #2c3e50;
+            --text-secondary: #6c757d;
+            --card-bg: #ffffff;
+            --border-radius: 12px;
+            --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            outline: none;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部导航 */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 16px;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+            box-shadow: 0 4px 10px rgba(255, 107, 53, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #e55a2b;
+            transform: translateY(-1px);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #fff5eb 0%, #ffe0b2 100%);
+            padding: 80px 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--text-main);
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+
+        .app-preview {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .app-card {
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            width: 160px;
+            text-align: left;
+            transition: transform 0.3s;
+        }
+
+        .app-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .app-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-color);
+            border-radius: 12px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+
+        .app-card h4 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .app-card p {
+            font-size: 12px;
+            color: var(--text-secondary);
+        }
+
+        /* 主要内容区 */
+        main {
+            padding: 60px 0;
+        }
+
+        /* 栏目网格 */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            bottom: 5px;
+            width: 5px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        .section-more {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .section-more:hover {
+            color: var(--primary-color);
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        /* 内容卡片 */
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-3px);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 180px;
+            background-color: #eee;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-tag {
+            font-size: 12px;
+            color: var(--primary-color);
+            background: rgba(255, 107, 53, 0.1);
+            padding: 4px 8px;
+            border-radius: 4px;
+            width: fit-content;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .card-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .card-desc {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            flex: 1;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .card-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #999;
+            border-top: 1px solid #f0f0f0;
+            padding-top: 15px;
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .avatar {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: #ddd;
+        }
+
+        /* 特色板块 */
+        .features {
+            background: white;
+            padding: 60px 0;
+            border-radius: 20px;
+            margin-bottom: 60px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            background: #fff5eb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .feature-item h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .feature-item p {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        /* 底部 */
+        footer {
+            background-color: #2c3e50;
+            color: #bdc3c7;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h2 {
+            color: white;
+            font-size: 24px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-brand p {
+            font-size: 14px;
+            max-width: 300px;
+            line-height: 1.8;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 13px;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 992px) {
+            .feature-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .app-preview {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#ff6b35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 17L12 22L22 17" stroke="#ff6b35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M2 12L12 17L22 12" stroke="#ff6b35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                番茄社区<span>app</span>
+            </a>
+            <nav class="nav-links">
+                <a href="#" class="active">首页</a>
+                <a href="#">热门话题</a>
+                <a href="#">兴趣圈子</a>
+                <a href="#">同城动态</a>
+                <a href="#">创作者中心</a>
+            </nav>
+            <div class="nav-actions">
+                <button class="btn btn-outline">登录</button>
+                <button class="btn btn-primary">下载App</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero 区域 -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>发现身边的精彩，连接志同道合的朋友</h1>
+            <p>番茄社区app是一个基于兴趣的开放式社交平台，汇聚海量热门话题、生活瞬间与优质内容。无论你是喜欢摄影、游戏还是美食，这里都有属于你的舞台。</p>
+            <div style="margin-bottom: 20px;">
+                <button class="btn btn-primary" style="padding: 12px 30px; font-size: 16px;">立即开始探索</button>
+                <button class="btn btn-outline" style="padding: 12px 30px; font-size: 16px; border-color: #fff; color: #fff;">了解更多</button>
+            </div>
+            <div class="app-preview">
+                <div class="app-card">
+                    <div class="app-icon">📱</div>
+                    <h4>Android版</h4>
+                    <p>安全下载</p>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon">🍎</div>
+                    <h4>iOS版</h4>
+                    <p>App Store</p>
+                </div>
+                <div class="app-card">
+                    <div class="app-icon">💻</div>
+                    <h4>PC版</h4>
+                    <p>网页端入口</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心功能 -->
+    <section class="container">
+        <div class="features">
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">🔥</div>
+                    <h3>热门话题</h3>
+                    <p>实时追踪全网热点，参与百万人的讨论。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">👥</div>
+                    <h3>兴趣圈子</h3>
+                    <p>根据爱好自动匹配圈子，找到你的同好。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📹</div>
+                    <h3>短视频</h3>
+                    <p>沉浸式视频体验，记录生活的每一个瞬间。</p>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>纯净社区</h3>
+                    <p>严格的内容审核机制，保障绿色上网环境。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 热门推荐 -->
+    <main class="container">
+        <div class="section-header">
+            <h2 class="section-title">热门推荐</h2>
+            <a href="#" class="section-more">查看更多 &rarr;</a>
+        </div>
+
+        <div class="grid-layout">
+            <!-- 文章卡片 1 -->
+            <article class="card">
+                <img src="https://picsum.photos/seed/tech/400/250" alt="科技数码" class="card-image">
+                <div class="card-body">
+                    <span class="card-tag">数码评测</span>
+                    <h3 class="card-title">2024年最值得入手的旗舰手机深度解析</h3>
+                    <p class="card-desc">随着新机型的发布，消费者的选择越来越多。本文从处理器、屏幕、影像系统等多个维度进行详细对比，帮你找到最适合的那一款。</p>
+                    <div class="card-footer">
+                        <div class="user-info">
+                            <img src="https://picsum.photos/seed/u1/50/50" alt="用户头像" class="avatar">
+                            <span>极客阿杰</span>
+                        </div>
+                        <span>2小时前</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 文章卡片 2 -->
+            <article class="card">
+                <img src="https://picsum.photos/seed/food/400/250" alt="美食探店" class="card-image">
+                <div class="card-body">
+                    <span class="card-tag">美食探店</span>
+                    <h3 class="card-title">藏在城市角落的宝藏咖啡馆，人均50吃出幸福感</h3>
+                    <p class="card-desc">周末不知道去哪里？推荐几家环境清幽、咖啡香浓的小店，适合拍照打卡和安静阅读。</p>
+                    <div class="card-footer">
+                        <div class="user-info">
+                            <img src="https://picsum.photos/seed/u2/50/50" alt="用户头像" class="avatar">
+                            <span>吃货小美</span>
+                        </div>
+                        <span>5小时前</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 文章卡片 3 -->
+            <article class="card">
+                <img src="https://picsum.photos/seed/travel/400/250" alt="旅行攻略" class="card-image">
+                <div class="card-body">
+                    <span class="card-tag">旅行攻略</span>
+                    <h3 class="card-title">云南自驾游全攻略：避开人流，遇见最美的风景</h3>
+                    <p class="card-desc">从大理到丽江，再到香格里拉，这条路线串联了云南最精华的景点。附上详细的路线规划和避坑指南。</p>
+                    <div class="card-footer">
+                        <div class="user-info">
+                            <img src="https://picsum.photos/seed/u3/50/50" alt="用户头像" class="avatar">
+                            <span>背包客老王</span>
+                        </div>
+                        <span>1天前</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 文章卡片 4 -->
+            <article class="card">
+                <img src="https://picsum.photos/seed/art/400/250" alt="设计美学" class="card-image">
+                <div class="card-body">
+                    <span class="card-tag">设计美学</span>
+                    <h3 class="card-title">极简主义装修风格：如何打造舒适的家</h3>
+                    <p class="card-desc">少即是多。分享几个极简装修的实用技巧，包括色彩搭配、家具选择和收纳方案。</p>
+                    <div class="card-footer">
+                        <div class="user-info">
+                            <img src="https://picsum.photos/seed/u4/50/50" alt="用户头像" class="avatar">
+                            <span>家居达人</span>
+                        </div>
+                        <span>1天前</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+
+        <!-- 热门话题 -->
+        <div class="section-header">
+            <h2 class="section-title">正在热议</h2>
+            <a href="#" class="section-more">参与讨论 &rarr;</a>
+        </div>
+        
+        <div class="grid-layout">
+            <div class="card" style="align-items: center; justify-content: center; text-align: center; background: #fff5eb; border: none;">
+                <h3 style="font-size: 24px; margin-bottom: 10px; color: #ff6b35;">#夏季露营指南#</h3>
+                <p style="color: #666;">已参与 12.5万 讨论</p>
+            </div>
+            <div class="card" style="align-items: center; justify-content: center; text-align: center; background: #e3f2fd; border: none;">
+                <h3 style="font-size: 24px; margin-bottom: 10px; color: #2196f3;">#职场生存法则#</h3>
+                <p style="color: #666;">已参与 8.3万 讨论</p>
+            </div>
+            <div class="card" style="align-items: center; justify-content: center; text-align: center; background: #e8f5e9; border: none;">
+                <h3 style="font-size: 24px; margin-bottom: 10px; color: #4caf50;">#猫咪日常#</h3>
+                <p style="color: #666;">已参与 45.2万 讨论</p>
+            </div>
+            <div class="card" style="align-items: center; justify-content: center; text-align: center; background: #fff3e0; border: none;">
+                <h3 style="font-size: 24px; margin-bottom: 10px; color: #ff9800;">#数码产品开箱#</h3>
+                <p style="color: #666;">已参与 6.7万 讨论</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#ff6b35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="#ff6b35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="#ff6b35" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        番茄社区
+                    </h2>
+                    <p>番茄社区致力于为用户提供一个真实、有趣、多元的社交空间。我们相信，每一个兴趣都值得被尊重，每一次分享都能产生连接。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">公司简介</a></li>
+                        <li><a href="#">加入我们</a></li>
+                        <li><a href="#">联系方式</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>产品服务</h4>
+                    <ul>
+                        <li><a href="#">下载App</a></li>
+                        <li><a href="#">创作者计划</a></li>
+                        <li><a href="#">广告合作</a></li>
+                        <li><a href="#">社区规范</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">官方客服</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 番茄社区 App 版权所有 | 仅供演示使用</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+          </html>
