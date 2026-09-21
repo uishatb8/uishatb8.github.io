@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="原田亚希官方网站与资料库，收录日本女演员原田亚希的详细个人资料、影视作品列表、写真摄影集、主要活动及粉丝资讯。">
+    <meta name="keywords" content="原田亚希, 原田亜希, 日本女演员, 写真, 影视作品, 演艺生涯">
+    <title>原田亚希-日本女演员资料库与影视作品展示</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #d32f2f; /* 活力红，符合艺人/娱乐调性 */
+            --secondary-color: #f5f5f5;
+            --text-main: #333333;
+            --text-light: #666666;
+            --bg-body: #ffffff;
+            --bg-section: #fafafa;
+            --border-radius: 8px;
+            --container-width: 1200px;
+            --spacing-unit: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            letter-spacing: -0.5px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .search-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            color: var(--text-main);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 500px;
+            background-color: #000;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            /* 使用 picsum 作为占位图，模拟艺人照片风格 */
+            background-image: url('https://picsum.photos/seed/yukihara/1920/1080');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.6;
+            transition: transform 10s ease;
+        }
+        
+        .hero:hover .hero-bg {
+            transform: scale(1.05);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: #fff;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero-tag {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 16px;
+            font-weight: 800;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 32px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background-color: var(--primary-color);
+            color: #fff;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+
+        .btn:hover {
+            background-color: #b71c1c;
+        }
+
+        .btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Section General */
+        section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 32px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -14px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+
+        .section-link {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .section-link:hover {
+            color: var(--primary-color);
+        }
+
+        /* Profile Section */
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+            background-color: #fff;
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .profile-img-wrapper {
+            background-color: var(--secondary-color);
+            height: 400px;
+            overflow: hidden;
+        }
+        
+        .profile-img-wrapper img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .profile-info {
+            padding: 32px;
+        }
+
+        .profile-bio h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .profile-bio p {
+            color: var(--text-light);
+            margin-bottom: 24px;
+            text-align: justify;
+        }
+
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .info-table td {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-table td:first-child {
+            width: 100px;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .info-table td:last-child {
+            color: var(--text-light);
+        }
+
+        /* Works Grid */
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .work-card {
+            background: #fff;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+
+        .work-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.12);
+        }
+
+        .work-poster {
+            height: 380px;
+            background-color: #eee;
+            position: relative;
+        }
+        
+        .work-poster img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .work-type {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background-color: rgba(0,0,0,0.7);
+            color: #fff;
+            padding: 4px 8px;
+            font-size: 12px;
+            border-radius: 4px;
+        }
+
+        .work-content {
+            padding: 16px;
+        }
+
+        .work-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .work-year {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+
+        /* Gallery Section */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(2, 200px);
+            gap: 12px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .gallery-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+        .gallery-item:nth-child(2) { grid-column: span 2; }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.3s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 20px;
+            color: #fff;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #999;
+            padding: 60px 0 20px;
+            font-size: 14px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-brand h2 {
+            color: #fff;
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 16px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 20px;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .profile-grid {
+                grid-template-columns: 1fr;
+            }
+            .profile-img-wrapper {
+                height: 300px;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                grid-template-rows: auto;
+            }
+            .gallery-item:nth-child(1) {
+                grid-column: span 2;
+                height: 250px;
+            }
+            .gallery-item:nth-child(2) {
+                grid-column: span 2;
+                height: 250px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 16px 0;
+            }
+            nav ul {
+                margin-top: 12px;
+                gap: 16px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 32px;
+            }
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">Yukihara<span>DB</span></a>
+            <nav>
+                <ul>
+                    <li><a href="#profile">个人资料</a></li>
+                    <li><a href="#works">影视作品</a></li>
+                    <li><a href="#gallery">写真摄影</a></li>
+                    <li><a href="#news">动态资讯</a></li>
+                </ul>
+            </nav>
+            <button class="search-btn" aria-label="搜索">🔍</button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="hero-content">
+                <span class="hero-tag">日本女演员</span>
+                <h1>原田亚希</h1>
+                <p>日本著名女演员、模特。以甜美清新的形象和多样的演技风格活跃于影视及综艺界，深受观众喜爱。</p>
+                <a href="#works" class="btn">查看作品</a>
+            </div>
+        </section>
+
+        <!-- Profile Section -->
+        <section id="profile" class="container">
+            <div class="section-header">
+                <h2 class="section-title">个人资料</h2>
+                <a href="#" class="section-link">查看详细履历 &rarr;</a>
+            </div>
+            <div class="profile-grid">
+                <div class="profile-img-wrapper">
+                    <!-- 使用 picsum 模拟艺人照片 -->
+                    <img src="https://picsum.photos/seed/yukihara_portrait/400/600" alt="原田亚希写真">
+                </div>
+                <div class="profile-info">
+                    <div class="profile-bio">
+                        <h3>关于原田亚希</h3>
+                        <p>原田亚希（Yukihara Aki），日本女演员、模特。出生于日本东京都。她以其标志性的笑容和独特的气质，在时尚界和演艺圈都占有一席之地。原田亚希不仅活跃于电视剧和电影拍摄，还经常参与综艺节目和时尚杂志的拍摄，展现了多才多艺的一面。</p>
+                    </div>
+                    <table class="info-table">
+                        <tr>
+                            <td>姓名</td>
+                            <td>原田亚希</td>
+                        </tr>
+                        <tr>
+                            <td>出生日期</td>
+                            <td>1985年10月10日</td>
+                        </tr>
+                        <tr>
+                            <td>出生地</td>
+                            <td>日本东京都</td>
+                        </tr>
+                        <tr>
+                            <td>身高</td>
+                            <td>160 cm</td>
+                        </tr>
+                        <tr>
+                            <td>三围</td>
+                            <td>B82cm / W58cm / H82cm</td>
+                        </tr>
+                        <tr>
+                            <td>事务所</td>
+                            <td>Stardust Promotion</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Works Section -->
+        <section id="works" style="background-color: var(--bg-section);">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">影视作品</h2>
+                    <a href="#" class="section-link">浏览全部作品 &rarr;</a>
+                </div>
+                <div class="works-grid">
+                    <!-- Movie 1 -->
+                    <article class="work-card">
+                        <div class="work-poster">
+                            <span class="work-type">电视剧</span>
+                            <img src="https://picsum.photos/seed/movie1/300/450" alt="作品海报">
+                        </div>
+                        <div class="work-content">
+                            <h3 class="work-title">东京爱情故事 (重制版)</h3>
+                            <span class="work-year">2013</span>
+                        </div>
+                    </article>
+                    <!-- Movie 2 -->
+                    <article class="work-card">
+                        <div class="work-poster">
+                            <span class="work-type">电影</span>
+                            <img src="https://picsum.photos/seed/movie2/300/450" alt="作品海报">
+                        </div>
+                        <div class="work-content">
+                            <h3 class="work-title">青春单车</h3>
+                            <span class="work-year">2010</span>
+                        </div>
+                    </article>
+                    <!-- Movie 3 -->
+                    <article class="work-card">
+                        <div class="work-poster">
+                            <span class="work-type">电视剧</span>
+                            <img src="https://picsum.photos/seed/movie3/300/450" alt="作品海报">
+                        </div>
+                        <div class="work-content">
+                            <h3 class="work-title">绝对零度</h3>
+                            <span class="work-year">2011</span>
+                        </div>
+                    </article>
+                    <!-- Movie 4 -->
+                    <article class="work-card">
+                        <div class="work-poster">
+                            <span class="work-type">综艺</span>
+                            <img src="https://picsum.photos/seed/movie4/300/450" alt="作品海报">
+                        </div>
+                        <div class="work-content">
+                            <h3 class="work-title">全员集合！</h3>
+                            <span class="work-year">2008 - 2012</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="container">
+            <div class="section-header">
+                <h2 class="section-title">写真摄影</h2>
+                <a href="#" class="section-link">查看图集 &rarr;</a>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/g1/600/600" alt="写真集封面">
+                    <div class="gallery-overlay">
+                        <h4>《夏日回忆》写真集</h4>
+                        <p>发行日期：2015年</p>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/g2/600/300" alt="杂志拍摄">
+                    <div class="gallery-overlay">
+                        <h4>时尚杂志封面</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/g3/600/300" alt="活动照片">
+                    <div class="gallery-overlay">
+                        <h4>电影首映礼</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/g4/600/300" alt="休闲街拍">
+                    <div class="gallery-overlay">
+                        <h4>休闲街拍</h4>
+                    </div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://picsum.photos/seed/g5/600/300" alt="杂志内页">
+                    <div class="gallery-overlay">
+                        <h4>杂志内页精选</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" style="background-color: var(--bg-section);">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">最新动态</h2>
+                </div>
+                <div class="works-grid">
+                    <article class="work-card" style="padding: 20px; height: auto;">
+                        <h4 style="margin-bottom: 10px; font-size: 16px;">参加秋季时装周</h4>
+                        <p style="font-size: 13px; color: #666; margin-bottom: 10px;">原田亚希作为特邀嘉宾出席了2023年秋季东京时装周，展示了多套设计师品牌服饰。</p>
+                        <span style="font-size: 12px; color: #999;">2023-10-15</span>
+                    </article>
+                    <article class="work-card" style="padding: 20px; height: auto;">
+                        <h4 style="margin-bottom: 10px; font-size: 16px;">新剧定档</h4>
+                        <p style="font-size: 13px; color: #666; margin-bottom: 10px;">主演的新悬疑剧《迷雾追踪》将于下月开播，期待她的精彩表现。</p>
+                        <span style="font-size: 12px; color: #999;">2023-09-20</span>
+                    </article>
+                    <article class="work-card" style="padding: 20px; height: auto;">
+                        <h4 style="margin-bottom: 10px; font-size: 16px;">获奖感言</h4>
+                        <p style="font-size: 13px; color: #666; margin-bottom: 10px;">凭借在《东京爱情故事》中的出色演技，获得年度最佳女主角提名。</p>
+                        <span style="font-size: 12px; color: #999;">2023-08-05</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h2>Yukihara DB</h2>
+                    <p>致力于为粉丝提供最全面、最准确的日本女演员原田亚希的相关资料与资讯。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#profile">个人资料</a></li>
+                        <li><a href="#works">影视作品</a></li>
+                        <li><a href="#gallery">写真图集</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>相关链接</h4>
+                    <ul>
+                        <li><a href="#">官方网站</a></li>
+                        <li><a href="#">粉丝俱乐部</a></li>
+                        <li><a href="#">事务所主页</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">Twitter / X</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">Weibo</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 Yukihara Aki Fan Database. All Rights Reserved. 本站为非官方粉丝整理站，内容仅供学习交流。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+                      </html>
