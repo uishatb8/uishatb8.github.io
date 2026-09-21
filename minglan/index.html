@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="明岚官方资讯平台，提供明岚最新动态、作品展示、粉丝社区互动及专属周边资讯。">
+    <meta name="keywords" content="明岚,明岚资讯,明岚动态,明岚作品">
+    <title>明岚-官方资讯与作品展示平台</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --spacing-unit: 1rem;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0,0,0,0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            object-fit: cover;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background-color: var(--accent-color);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: var(--text-secondary);
+        }
+
+        /* Header & Nav */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 2rem;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+            position: relative;
+        }
+
+        nav a:hover {
+            color: var(--accent-color);
+        }
+
+        .btn-subscribe {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .btn-subscribe:hover {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            padding: 6rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: radial-gradient(#e67e22 1px, transparent 1px);
+            background-size: 30px 30px;
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            letter-spacing: -1px;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .tag {
+            background: white;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .tag::before {
+            content: '#';
+            color: var(--accent-color);
+        }
+
+        /* Featured Works Grid */
+        .works-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .work-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .work-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .work-cover {
+            height: 380px;
+            width: 100%;
+            background-color: #ddd;
+            position: relative;
+        }
+
+        .work-cover img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .work-card:hover .work-cover img {
+            transform: scale(1.05);
+        }
+
+        .work-info {
+            padding: 1.5rem;
+        }
+
+        .work-category {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .work-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .work-meta {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* About Section */
+        .about-section {
+            background-color: var(--card-bg);
+        }
+
+        .about-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image img {
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .about-content h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item h3 {
+            font-size: 2rem;
+            color: var(--accent-color);
+            margin-bottom: 0.2rem;
+        }
+
+        .stat-item p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+
+        /* Community / FAQ */
+        .community-section {
+            background-color: var(--bg-color);
+        }
+
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 2rem;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--accent-color);
+            box-shadow: var(--shadow);
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-color);
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-brand p {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-col ul li a {
+            color: rgba(255,255,255,0.7);
+            font-size: 0.9rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--accent-color);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: rgba(255,255,255,0.5);
+            font-size: 0.85rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .about-layout {
+                grid-template-columns: 1fr;
+            }
+            .about-image {
+                order: -1;
+            }
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem 0;
+            }
+            nav ul {
+                margin: 1rem 0;
+                gap: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span>明岚</span>Official
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#home">首页</a></li>
+                    <li><a href="#works">作品展示</a></li>
+                    <li><a href="#about">关于我们</a></li>
+                    <li><a href="#community">粉丝社区</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="btn-subscribe">订阅更新</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container hero-content">
+                <h1>探索明岚的创意世界</h1>
+                <p>汇聚前沿视觉艺术与数字内容创作，为您提供独特的沉浸式体验。明岚致力于构建连接创作者与观众的桥梁。</p>
+                <div class="hero-tags">
+                    <span class="tag">数字艺术</span>
+                    <span class="tag">独立创作</span>
+                    <span class="tag">互动媒体</span>
+                    <span class="tag">视觉设计</span>
+                </div>
+                <div style="display: flex; justify-content: center; gap: 1rem;">
+                    <a href="#works" class="btn-subscribe" style="background-color: var(--accent-color);">浏览作品</a>
+                    <a href="#about" style="padding: 0.5rem 1.2rem; border: 1px solid #ccc; border-radius: 4px;">了解更多</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Works Section -->
+        <section id="works" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">精选作品</h2>
+                    <p class="section-subtitle">近期热门项目与创意展示</p>
+                </div>
+                <div class="works-grid">
+                    <!-- Item 1 -->
+                    <article class="work-card">
+                        <div class="work-cover">
+                            <img src="https://picsum.photos/seed/minglan1/400/600" alt="光影系列作品展示">
+                        </div>
+                        <div class="work-info">
+                            <span class="work-category">数字绘画</span>
+                            <h3 class="work-title">光影回响</h3>
+                            <div class="work-meta">
+                                <span>2023年10月</span>
+                                <span>2.4w 阅读</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Item 2 -->
+                    <article class="work-card">
+                        <div class="work-cover">
+                            <img src="https://picsum.photos/seed/minglan2/400/600" alt="城市印象系列展示">
+                        </div>
+                        <div class="work-info">
+                            <span class="work-category">概念设计</span>
+                            <h3 class="work-title">城市印象</h3>
+                            <div class="work-meta">
+                                <span>2023年11月</span>
+                                <span>1.8w 阅读</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Item 3 -->
+                    <article class="work-card">
+                        <div class="work-cover">
+                            <img src="https://picsum.photos/seed/minglan3/400/600" alt="未来视界系列展示">
+                        </div>
+                        <div class="work-info">
+                            <span class="work-category">插画</span>
+                            <h3 class="work-title">未来视界</h3>
+                            <div class="work-meta">
+                                <span>2023年12月</span>
+                                <span>3.1w 阅读</span>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Item 4 -->
+                    <article class="work-card">
+                        <div class="work-cover">
+                            <img src="https://picsum.photos/seed/minglan4/400/600" alt="自然探索系列展示">
+                        </div>
+                        <div class="work-info">
+                            <span class="work-category">生态摄影</span>
+                            <h3 class="work-title">自然探索</h3>
+                            <div class="work-meta">
+                                <span>2024年1月</span>
+                                <span>1.2w 阅读</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="about-layout">
+                    <div class="about-image">
+                        <img src="https://picsum.photos/seed/minglan_about/600/400" alt="明岚团队创作环境">
+                    </div>
+                    <div class="about-content">
+                        <h2>关于明岚</h2>
+                        <p>明岚是一个专注于数字内容创作与视觉艺术探索的平台。我们相信，优秀的作品能够跨越语言的障碍，直击人心。</p>
+                        <p>自成立以来，明岚聚集了一群热爱设计、追求极致的创作者。无论是传统的绘画技法，还是前沿的数字媒体技术，我们都致力于将其融入到每一个项目中，为用户呈现最纯粹的视觉享受。</p>
+                        
+                        <div class="stats-grid">
+                            <div class="stat-item">
+                                <h3>50+</h3>
+                                <p>原创作品</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>10w+</h3>
+                                <p>累计浏览</p>
+                            </div>
+                            <div class="stat-item">
+                                <h3>1000+</h3>
+                                <p>活跃粉丝</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community / FAQ Section -->
+        <section id="community" class="section community-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">粉丝社区</h2>
+                    <p class="section-subtitle">常见问题与互动指南</p>
+                </div>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <div class="faq-question">如何获取最新的作品更新？</div>
+                        <div class="faq-answer">您可以通过页面右上角的订阅按钮，或关注我们的官方社交媒体账号，第一时间获取明岚的动态。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">作品是否支持商业用途？</div>
+                        <div class="faq-answer">大部分原创作品仅供个人欣赏和学习交流，未经授权请勿用于商业用途。具体请查看每张作品的授权说明。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">是否接受投稿合作？</div>
+                        <div class="faq-answer">欢迎有才华的创作者通过邮件与我们联系，我们长期开放优质内容的投稿合作渠道。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何联系客服或反馈问题？</div>
+                        <div class="faq-answer">请在页脚找到我们的联系方式，或通过邮件发送您的反馈，我们会在24小时内回复。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3>明岚</h3>
+                    <p>用视觉语言讲述故事，连接每一个热爱生活的灵魂。</p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#home">首页</a></li>
+                        <li><a href="#works">作品库</a></li>
+                        <li><a href="#about">关于我们</a></li>
+                        <li><a href="#community">社区指南</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>资源</h4>
+                    <ul>
+                        <li><a href="#">设计素材下载</a></li>
+                        <li><a href="#">教程专栏</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">隐私政策</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li><a href="#">contact@minglan.art</a></li>
+                        <li><a href="#">微博：@明岚官方</a></li>
+                        <li><a href="#">微信：minglan_official</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 明岚. 保留所有权利. 本站内容仅供展示与交流。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
