@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="葛兰素史克事件专题页。提供关于葛兰素史克（GSK）中国行贿丑闻的背景回顾、关键时间节点、调查结果、涉案金额及对医药行业的影响分析。">
+    <meta name="keywords" content="葛兰素史克事件, GSK中国行贿案, 医药反腐, 葛兰素史克调查, GSK China">
+    <title>葛兰素史克事件 - 历史回顾与行业影响分析</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #c0392b;
+            --text-color: #333;
+            --bg-color: #f9f9f9;
+            --card-bg: #ffffff;
+            --border-radius: 8px;
+            --spacing: 20px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: var(--spacing) 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--spacing);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: #ecf0f1;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
+            color: #fff;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Main Content */
+        main {
+            padding: 40px 0;
+        }
+
+        .grid-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+
+        /* Article Section */
+        .article-section {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--bg-color);
+            color: var(--primary-color);
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 25px;
+            border-left: 3px solid #ddd;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            background-color: var(--accent-color);
+            border-radius: 50%;
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .timeline-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .highlight-box {
+            background-color: #fff5f5;
+            border-left: 4px solid var(--accent-color);
+            padding: 15px;
+            margin: 20px 0;
+            color: #721c24;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 15px;
+            background: var(--bg-color);
+            border-radius: var(--border-radius);
+        }
+
+        .stat-number {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .stat-label {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        /* Sidebar */
+        aside {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .sidebar-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .sidebar-title {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+        }
+
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .tag {
+            background-color: #eef2f7;
+            color: var(--primary-color);
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+
+        .related-list {
+            list-style: none;
+        }
+
+        .related-list li {
+            margin-bottom: 10px;
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 10px;
+        }
+
+        .related-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: var(--card-bg);
+            padding: 30px;
+            margin-top: 30px;
+            border-radius: var(--border-radius);
+        }
+
+        details {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        details:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        summary {
+            font-weight: bold;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 1.2rem;
+            color: var(--accent-color);
+        }
+
+        details[open] summary::after {
+            content: '-';
+        }
+
+        .faq-content {
+            margin-top: 10px;
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: #bdc3c7;
+            padding: 40px 0;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .grid-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .stat-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            nav ul {
+                display: none; /* Simplified for mobile */
+            }
+            
+            .header-content {
+                justify-content: center;
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-content">
+        <div class="logo">
+            <span>🛡️ 药事观察</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">行业资讯</a></li>
+                <li><a href="#">政策法规</a></li>
+                <li><a href="#">深度分析</a></li>
+                <li><a href="#">关于我们</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>葛兰素史克事件</h1>
+        <p>深入解析2013年中国医药行业最大规模商业贿赂案，回顾事件始末、调查细节及其对全球医药市场的深远影响。</p>
+    </div>
+</section>
+
+<main class="container">
+    <div class="grid-layout">
+        <!-- Main Content Area -->
+        <article class="article-section">
+            <h2 class="section-title">事件背景与概况</h2>
+            <p>葛兰素史克（GSK）事件是2013年中国医药行业发生的重大商业贿赂案件。作为全球知名的跨国制药企业，GSK中国区被指通过非法手段在中国市场进行大规模行贿，以获取药品准入和市场份额。此案不仅震惊了国内医药界，也引发了国际社会对中国商业环境及跨国企业合规管理的广泛关注。</p>
+            
+            <div class="highlight-box">
+                <strong>核心影响：</strong> 该事件直接导致GSK中国高层被调查、相关高管被刑拘，并促使中国政府启动了随后几年的“医药反腐”风暴，对整顿药品流通秩序起到了标志性作用。
+            </div>
+
+            <h2 class="section-title">关键时间节点</h2>
+            
+            <div class="timeline-item">
+                <span class="timeline-date">2013年7月</span>
+                <div class="timeline-content">
+                    <h3>立案调查</h3>
+                    <p>中国警方正式对GSK中国涉嫌商业贿赂展开调查，随后拘留了包括原GSK中国区总裁在内的多名高管。</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-date">2013年8月</span>
+                <div class="timeline-content">
+                    <h3>官方通报</h3>
+                    <p>中国公安部公布调查结果，确认GSK中国通过设立空壳公司、虚构学术推广活动等方式，向政府官员、医院代表及医生行贿，涉案金额巨大。</p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <span class="timeline-date">2014年1月</span>
+                <div class="timeline-content">
+                    <h3>行政处罚与整改</h3>
+                    <p>国家食品药品监督管理总局（现国家药监局）对GSK中国处以创纪录的30亿元人民币罚款，并责令其进行整改，加强合规体系建设。</p>
+                </div>
+            </div>
+
+            <h2 class="section-title">涉案金额与数据</h2>
+            <p>根据官方通报，GSK中国通过上述手段，在短短三年间累计行贿金额高达数十亿元人民币。这些资金主要用于支付给中介机构或直接给予医生个人回扣，以换取药品在医院的高销量。</p>
+
+            <div class="stat-grid">
+                <div class="stat-item">
+                    <span class="stat-number">30亿</span>
+                    <span class="stat-label">罚款金额 (人民币)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">3年</span>
+                    <span class="stat-label">主要行贿周期</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">多名</span>
+                    <span class="stat-label">涉案高管被捕</span>
+                </div>
+            </div>
+
+            <h2 class="section-title">行业影响与反思</h2>
+            <p>GSK事件成为了中国医药反腐的分水岭。在此之前，医药代表游走在灰色地带；事件之后，国家开始加大对药品流通领域的监管力度，推行“两票制”，并严厉打击药品购销环节的不正之风。对于跨国药企而言，该事件也是合规管理的重要警示，促使全球企业重新审视其在华运营的合规风险。</p>
+        </article>
+
+        <!-- Sidebar Area -->
+        <aside>
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">相关标签</h3>
+                <div class="tag-cloud">
+                    <a href="#" class="tag">医药反腐</a>
+                    <a href="#" class="tag">GSK中国</a>
+                    <a href="#" class="tag">商业贿赂</a>
+                    <a href="#" class="tag">跨国药企</a>
+                    <a href="#" class="tag">合规管理</a>
+                    <a href="#" class="tag">药监局</a>
+                </div>
+            </div>
+
+            <div class="sidebar-card">
+                <h3 class="sidebar-title">延伸阅读</h3>
+                <ul class="related-list">
+                    <li><a href="#">“两票制”政策详解与实施难点</a></li>
+                    <li><a href="#">2016年医药反腐风暴回顾</a></li>
+                    <li><a href="#">跨国药企在华合规策略演变</a></li>
+                    <li><a href="#">医药代表备案制：行业新常态</a></li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <h2 class="section-title">常见问题解答</h2>
+        
+        <details>
+            <summary>GSK事件的主要涉案手段是什么？</summary>
+            <div class="faq-content">
+                <p>根据调查，GSK中国利用空壳公司进行洗钱，虚构学术会议和推广活动，将巨额资金通过地下钱庄转移，并直接给予医生个人回扣，以换取药品在医院的准入和销量。</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>GSK事件后中国医药行业发生了哪些变化？</summary>
+            <div class="faq-content">
+                <p>该事件加速了国家医药反腐的进程，推动了“两票制”的实施，规范了药品流通环节，并促使医药代表制度发生根本性变革，行业正逐步向“合规、透明”的方向发展。</p>
+            </div>
+        </details>
+
+        <details>
+            <summary>此次罚款对GSK公司有何影响？</summary>
+            <div class="faq-content">
+                <p>30亿元人民币的罚款对GSK当期业绩造成了较大冲击。但作为全球巨头，GSK通过加强合规体系和调整在华战略，逐渐恢复了市场信心，并继续在中国市场运营。</p>
+            </div>
+        </details>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2023 药事观察. 保留所有权利。</p>
+        <p>本站内容仅供学习参考，不构成投资建议。</p>
+    </div>
+</footer>
+
+</body>
+</html>
