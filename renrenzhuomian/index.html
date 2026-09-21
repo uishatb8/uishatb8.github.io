@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="人人桌面为您提供最全面、最安全的PC软件下载服务，包含系统工具、效率软件、娱乐应用及游戏辅助，拥有专业的软件评测、使用教程及版本更新资讯，助您打造高效、整洁的数字工作环境。">
+    <meta name="keywords" content="人人桌面,软件下载,系统工具,效率软件,电脑软件,软件评测,软件教程,软件更新">
+    <title>人人桌面-安全实用的软件资源与使用指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-hover: #1d4ed8;
+            --secondary-color: #64748b;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --text-main: #1e293b;
+            --text-sub: #475569;
+            --border-color: #e2e8f0;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+            --radius: 8px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--card-bg);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 24px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-sub);
+            font-size: 15px;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            padding: 8px 12px 8px 36px;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            font-size: 14px;
+            width: 200px;
+            transition: width 0.3s, border-color 0.3s;
+        }
+
+        .search-box input:focus {
+            width: 240px;
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--secondary-color);
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-sub);
+            margin-bottom: 32px;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: #dbeafe;
+            color: var(--primary-color);
+            padding: 4px 12px;
+            border-radius: 16px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            flex: 1;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 32px;
+        }
+
+        /* Sidebar */
+        aside {
+            position: sticky;
+            top: 100px;
+            height: fit-content;
+        }
+
+        .sidebar-menu h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .sidebar-menu ul li {
+            margin-bottom: 8px;
+        }
+
+        .sidebar-menu a {
+            display: block;
+            padding: 8px 12px;
+            border-radius: 6px;
+            color: var(--text-sub);
+            font-size: 14px;
+        }
+
+        .sidebar-menu a:hover, .sidebar-menu a.active {
+            background-color: #eff6ff;
+            color: var(--primary-color);
+        }
+
+        .sidebar-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 20px;
+            box-shadow: var(--shadow-sm);
+            margin-top: 24px;
+            border: 1px solid var(--border-color);
+        }
+
+        .sidebar-card h3 {
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .sidebar-card ul li {
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+
+        /* Content Area */
+        .main-content {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        /* Section Header */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .section-header h2 {
+            font-size: 22px;
+            color: var(--text-main);
+            border-left: 4px solid var(--primary-color);
+            padding-left: 12px;
+        }
+
+        .view-all {
+            font-size: 14px;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        /* Software Grid */
+        .software-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .software-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            border: 1px solid var(--border-color);
+            padding: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .software-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background-color: #f1f5f9;
+            border-radius: 12px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        .card-desc {
+            font-size: 13px;
+            color: var(--text-sub);
+            margin-bottom: 16px;
+            flex: 1;
+        }
+
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: var(--secondary-color);
+            border-top: 1px solid #f1f5f9;
+            padding-top: 12px;
+        }
+
+        .card-tags span {
+            background-color: #f1f5f9;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-right: 4px;
+        }
+
+        .btn-download {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: #f1f5f9;
+            color: var(--text-main);
+            padding: 8px;
+            border-radius: 6px;
+            font-size: 13px;
+            margin-top: 12px;
+            transition: background-color 0.2s;
+        }
+
+        .btn-download:hover {
+            background-color: #e2e8f0;
+        }
+
+        /* Feature List */
+        .feature-list {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            padding: 24px;
+            border: 1px solid var(--border-color);
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 16px;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .feature-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .feature-icon {
+            width: 40px;
+            height: 40px;
+            background-color: #dbeafe;
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .feature-text h4 {
+            font-size: 16px;
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        .feature-text p {
+            font-size: 14px;
+            color: var(--text-sub);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: 24px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #f1f5f9;
+            padding: 16px 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 8px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 18px;
+            color: var(--secondary-color);
+        }
+
+        .faq-answer {
+            font-size: 14px;
+            color: var(--text-sub);
+            display: none;
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        .faq-item.active .faq-question::after {
+            content: '-';
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1e293b;
+            color: #94a3b8;
+            padding: 60px 20px 20px;
+            margin-top: auto;
+        }
+
+        .footer-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #f1f5f9;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            font-size: 13px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            
+            nav {
+                display: none;
+            }
+
+            .header-actions .search-box {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .header-inner {
+                padding: 0 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-inner">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                </svg>
+                <span>人人桌面</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">系统工具</a></li>
+                    <li><a href="#">效率办公</a></li>
+                    <li><a href="#">多媒体</a></li>
+                    <li><a href="#">网络工具</a></li>
+                    <li><a href="#">开发者</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <div class="search-box">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" placeholder="搜索软件...">
+                </div>
+                <a href="#" class="btn-primary">下载客户端</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>打造您的专属数字工作台</h1>
+                <p>人人桌面为您提供海量正版软件资源、专业版本更新与安全下载服务，助您高效管理电脑环境。</p>
+                <div class="hero-tags">
+                    <span class="tag">#系统优化</span>
+                    <span class="tag">#安全防护</span>
+                    <span class="tag">#效率提升</span>
+                    <span class="tag">#绿色软件</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- Sidebar -->
+            <aside>
+                <div class="sidebar-menu">
+                    <h3>软件分类</h3>
+                    <ul>
+                        <li><a href="#" class="active">综合推荐</a></li>
+                        <li><a href="#">系统工具</a></li>
+                        <li><a href="#">办公软件</a></li>
+                        <li><a href="#">多媒体</a></li>
+                        <li><a href="#">网络工具</a></li>
+                        <li><a href="#">开发工具</a></li>
+                        <li><a href="#">杀毒安全</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3>本周热门</h3>
+                    <ul>
+                        <li><a href="#">🛡️ 360安全卫士</a></li>
+                        <li><a href="#">📁 WinRAR 压缩包</a></li>
+                        <li><a href="#">💬 微信电脑版</a></li>
+                        <li><a href="#">🎨 Adobe全家桶</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-card">
+                    <h3>温馨提示</h3>
+                    <ul>
+                        <li>⚠️ 请认准官网下载</li>
+                        <li>🔒 本站软件均为纯净版</li>
+                        <li>💾 支持多版本下载</li>
+                    </ul>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <div class="main-content">
+                
+                <!-- Section: System Tools -->
+                <section>
+                    <div class="section-header">
+                        <h2>系统工具</h2>
+                        <a href="#" class="view-all">查看全部 &rarr;</a>
+                    </div>
+                    <div class="software-grid">
+                        <article class="software-card">
+                            <div class="card-icon">🛡️</div>
+                            <h3 class="card-title">火绒安全</h3>
+                            <p class="card-desc">轻量级电脑安全软件，无广告弹窗，专注于拦截恶意软件和病毒防护。</p>
+                            <div class="card-meta">
+                                <span>大小: 85MB</span>
+                                <div class="card-tags"><span>免费</span></div>
+                            </div>
+                            <a href="#" class="btn-download">立即下载</a>
+                        </article>
+
+                        <article class="software-card">
+                            <div class="card-icon">🔧</div>
+                            <h3 class="card-title">Geek Uninstaller</h3>
+                            <p class="card-desc">强制卸载残留软件，清理注册表垃圾，支持绿色免安装版下载。</p>
+                            <div class="card-meta">
+                                <span>大小: 3MB</span>
+                                <div class="card-tags"><span>绿色</span></div>
+                            </div>
+                            <a href="#" class="btn-download">立即下载</a>
+                        </article>
+
+                        <article class="software-card">
+                            <div class="card-icon">⚡</div>
+                            <h3 class="card-title">Dism++</h3>
+                            <p class="card-desc">Windows系统组件管理、服务管理、驱动管理及系统清理工具。</p>
+                            <div class="card-meta">
+                                <span>大小: 5MB</span>
+                                <div class="card-tags"><span>开源</span></div>
+                            </div>
+                            <a href="#" class="btn-download">立即下载</a>
+                        </article>
+
+                        <article class="software-card">
+                            <div class="card-icon">🖼️</div>
+                            <h3 class="card-title">Snipaste</h3>
+                            <p class="card-desc">强大的截图工具，支持贴图、标注、OCR文字识别及窗口置顶。</p>
+                            <div class="card-meta">
+                                <span>大小: 6MB</span>
+                                <div class="card-tags"><span>免费</span></div>
+                            </div>
+                            <a href="#" class="btn-download">立即下载</a>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Section: Efficiency -->
+                <section>
+                    <div class="section-header">
+                        <h2>效率办公</h2>
+                        <a href="#" class="view-all">查看全部 &rarr;</a>
+                    </div>
+                    <div class="software-grid">
+                        <article class="software-card">
+                            <div class="card-icon">📝</div>
+                            <h3 class="card-title">Typora</h3>
+                            <p class="card-desc">所见即所得的Markdown编辑器，界面简洁，支持导出HTML/PDF。</p>
+                            <div class="card-meta">
+                                <span>大小: 10MB</span>
+                                <div class="card-tags"><span>编辑器</span></div>
+                            </div>
+                            <a href="#" class="btn-download">立即下载</a>
+                        </article>
+
+                        <article class="software-card">
+                            <div class="card-icon">☁️</div>
+                            <h3 class="card-title">坚果云同步</h3>
+                            <p class="card-desc">跨平台文件同步与备份工具，支持笔记、文档及图片的云端管理。</p>
+                            <div class="card-meta">
+                                <span>大小: 15MB</span>
+                                <div class="card-tags"><span>同步</span></div>
+                            </div>
+                            <a href="#" class="btn-download">立即下载</a>
+                        </article>
+
+                        <article class="software-card">
+                            <div class="card-icon">📊</div>
+                            <h3 class="card-title">ProcessOn</h3>
+                            <p class="card-desc">在线流程图绘制工具，支持多人协作，提供丰富的模板库。</p>
+                            <div class="card-meta">
+                                <span>大小: 20MB</span>
+                                <div class="card-tags"><span>在线</span></div>
+                            </div>
+                            <a href="#" class="btn-download">立即下载</a>
+                        </article>
+                    </div>
+                </section>
+
+                <!-- Feature Section -->
+                <section>
+                    <div class="section-header">
+                        <h2>为什么选择人人桌面</h2>
+                    </div>
+                    <div class="feature-list">
+                        <div class="feature-item">
+                            <div class="feature-icon">1</div>
+                            <div class="feature-text">
+                                <h4>安全可靠的下载源</h4>
+                                <p>所有软件均经过人工审核与病毒扫描，确保下载文件无木马、无捆绑，保障您的系统安全。</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">2</div>
+                            <div class="feature-text">
+                                <h4>全版本兼容支持</h4>
+                                <p>无论是老旧的Windows XP系统，还是最新的Windows 11，我们提供适配各版本的专业软件。</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">3</div>
+                            <div class="feature-text">
+                                <h4>专业的使用指南</h4>
+                                <p>提供详尽的软件安装教程、功能使用技巧及常见问题解答，帮助您快速上手。</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- FAQ Section -->
+                <section class="faq-section">
+                    <div class="section-header">
+                        <h2>常见问题解答</h2>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">下载速度慢怎么办？</div>
+                        <div class="faq-answer">下载速度受网络环境影响，建议在非高峰时段下载，或检查您的网络连接。对于大文件，我们可以提供迅雷链接。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">下载的软件有广告吗？</div>
+                        <div class="faq-answer">本站提供的软件均为官方纯净版或绿色版，不含恶意广告和捆绑软件。安装后请留意安装向导中的选项。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">如何卸载软件？</div>
+                        <div class="faq-answer">推荐使用“Geek Uninstaller”或系统自带的“添加或删除程序”功能进行卸载，以彻底清除残留文件。</div>
+                    </div>
+                </section>
+
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-col">
+                <div class="logo" style="margin-bottom: 16px; color: #fff;">
+                    <span>人人桌面</span>
+                </div>
+                <p style="font-size: 13px; line-height: 1.8;">
+                    专注于为用户提供安全、快速、纯净的软件下载服务。我们致力于构建一个良性的数字软件生态。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速导航</h4>
+                <ul>
+                    <li><a href="#">软件排行榜</a></li>
+                    <li><a href="#">最新更新</a></li>
+                    <li><a href="#">软件评测</a></li>
+                    <li><a href="#">提交软件</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>支持与服务</h4>
+                <ul>
+                    <li><a href="#">联系我们</a></li>
+                    <li><a href="#">免责声明</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                    <li><a href="#">加入我们</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>关注我们</h4>
+                <ul>
+                    <li><a href="#">微信公众号</a></li>
+                    <li><a href="#">新浪微博</a></li>
+                    <li><a href="#">用户反馈</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 人人桌面 版权所有 | 仅供学习交流使用</p>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的 FAQ 交互逻辑
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+            });
+        });
+
+        // 搜索框交互（仅视觉反馈）
+        const searchInput = document.querySelector('.search-box input');
+        searchInput.addEventListener('focus', () => {
+            searchInput.placeholder = '请输入软件名称或关键词...';
+        });
+        searchInput.addEventListener('blur', () => {
+            searchInput.placeholder = '搜索软件...';
+        });
+    </script>
+</body>
+  </html>
